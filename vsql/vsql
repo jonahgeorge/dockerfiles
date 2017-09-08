@@ -6,10 +6,7 @@ docker run \
     $tty \
     --interactive \
     --rm \
-    --user $(id -u):$(id -g) \
-    -p "3306:3306" \
     --volume /etc/passwd:/etc/passwd:ro \
     --volume /etc/group:/etc/group:ro \
-    --volume $(pwd):/app \
     --network host \
-    jonahgeorge/schema-tool "$@"
+    jonahgeorge/vsql "$@"
