@@ -1,0 +1,10 @@
+#!/bin/bash
+
+tty=
+tty -s && tty=--tty
+docker run \
+    $tty \
+    --interactive \
+    --rm \
+    --network host \
+    jonahgeorge/psql "$@"
